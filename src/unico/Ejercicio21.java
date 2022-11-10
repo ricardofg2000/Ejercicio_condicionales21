@@ -39,51 +39,35 @@ public class Ejercicio21 {
 		System.out.print("Turno del jugador 2 (introduzca piedra, papel o tijera): ");
 		rjugador2 = leer.nextLine();
 				
-		if(rjugador1 != "papel" || rjugador1 != "tijera" || rjugador1 != "piedra") {
-			mensaje = "Error";
+		
+		switch (rjugador1) {
+			case "piedra":
+				switch (rjugador2) {
+					case "piedra": mensaje = "Empate";
+					case "tijeras": mensaje = "Gana el jugador 2";
+					case "papel": mensaje = "Gana el jugador 1";
+					default:mensaje = "Error";
+					break;
+				}
+			case "tijeras":
+				switch (rjugador2) {
+					case "piedra": mensaje = "Gana el jugador 2";
+					case "tijeras": mensaje = "Empate";
+					case "papel": mensaje = "Gana el jugador 1";
+					default:mensaje = "Error";
+					break;
+				}
+			case "papel":
+				switch (rjugador2) {
+					case "piedra": mensaje = "Gana el jugador 1";
+					case "tijeras": mensaje = "Gana el jugador 2";
+					case "papel": mensaje = "Empate";
+					default:mensaje = "Error";
+					break;
+				}
+			default:mensaje = "Error";
+			break;
 		}
-					
-		if(rjugador2 != "papel" || rjugador2 != "tijera" || rjugador2 != "piedra") {
-			mensaje = "Error";
-		}
-					
-				
-		if (rjugador1.equals("papel") && rjugador2.equals("papel")) {
-			mensaje = "Empate";
-		}
-				
-		if (rjugador1.equals("papel") && rjugador2.equals("tijera")) {
-			mensaje = "Gana el jugador 2";
-		}
-				
-		if (rjugador1.equals("papel") && rjugador2.equals("piedra")) {
-			mensaje = "Gana el jugador 1";
-		}
-				
-		if (rjugador1.equals("piedra") && rjugador2.equals("papel")) {
-			mensaje = "Gana el jugador 2";
-		}
-				
-		if (rjugador1.equals("piedra") && rjugador2.equals("tijera")) {
-			mensaje = "Gana el jugador 1";
-		}
-				
-		if (rjugador1.equals("piedra") && rjugador2.equals("piedra")) {
-			mensaje = "Empate";
-		}
-				
-		if (rjugador1.equals("tijera") && rjugador2.equals("papel")) {
-			mensaje = "Gana el jugador 1";
-		}
-				
-		if (rjugador1.equals("tijera") && rjugador2.equals("tijera")) {
-			mensaje = "Empate";
-		}
-				
-		if (rjugador1.equals("tijera") && rjugador2.equals("piedra")) {
-			mensaje = "Gana el jugador 2";
-		}			
-				
 				
 		System.out.println(mensaje);
 				
