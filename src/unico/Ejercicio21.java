@@ -29,6 +29,10 @@ public class Ejercicio21 {
 		*/
 
 		Scanner leer = new Scanner(System.in);
+		
+		final String GANA1 = "Gana el jugador 1";
+		final String GANA2 = "Gana el jugador 2";
+		final String EMP = "Empate";
 				
 		String rjugador1;
 		String rjugador2;
@@ -43,30 +47,29 @@ public class Ejercicio21 {
 		switch (rjugador1) {
 			case "piedra":
 				switch (rjugador2) {
-					case "piedra": mensaje = "Empate";
-					case "tijeras": mensaje = "Gana el jugador 2";
-					case "papel": mensaje = "Gana el jugador 1";
+					case "piedra": mensaje = EMP; break;
+					case "tijeras": mensaje = "Gana el jugador 2"; break;
+					case "papel": mensaje = "Gana el jugador 1"; break;
 					default:mensaje = "Error";
-					break;
-				}
+					
+				}break;
 			case "tijeras":
 				switch (rjugador2) {
-					case "piedra": mensaje = "Gana el jugador 2";
-					case "tijeras": mensaje = "Empate";
-					case "papel": mensaje = "Gana el jugador 1";
+					case "piedra": mensaje = "Gana el jugador 2";break;
+					case "tijeras": mensaje = EMP;break;
+					case "papel": mensaje = "Gana el jugador 1";break;
 					default:mensaje = "Error";
-					break;
-				}
+					
+				}break;
 			case "papel":
 				switch (rjugador2) {
-					case "piedra": mensaje = "Gana el jugador 1";
-					case "tijeras": mensaje = "Gana el jugador 2";
-					case "papel": mensaje = "Empate";
+					case "piedra": mensaje = "Gana el jugador 1";break;
+					case "tijeras": mensaje = "Gana el jugador 2";break;
+					case "papel": mensaje = EMP;break;
 					default:mensaje = "Error";
-					break;
-				}
+				
+				}break;
 			default:mensaje = "Error";
-			break;
 		}
 				
 		System.out.println(mensaje);
